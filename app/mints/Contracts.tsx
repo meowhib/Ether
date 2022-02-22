@@ -2,10 +2,10 @@
 
 import { DataTable } from "@/app/mints/data-table";
 import { useEffect, useState } from "react";
-import { columns } from "./columns";
+import { MintEvent, columns } from "./columns";
 
 export default function Contracts() {
-  const [latestMints, setLatestMints] = useState([]);
+  const [latestMints, setLatestMints] = useState<MintEvent[]>([]);
   const [loadingMintsState, setLoadingMintsState] = useState("loading");
 
   async function fetchLatestMints() {

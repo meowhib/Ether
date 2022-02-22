@@ -4,6 +4,8 @@ const { ethers } = require("ethers");
 const v3PoolArtifact = require("@uniswap/v3-core/artifacts/contracts/UniswapV3Pool.sol/UniswapV3Pool.json");
 const poolAddress = "0x8ad599c3A0ff1De082011EFDDc58f1908eb6e6D8";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const provider = new ethers.JsonRpcProvider(
     "https://mainnet.infura.io/v3/" + process.env.INFURA_API_KEY
@@ -51,9 +53,6 @@ export async function GET() {
     return NextResponse.json(latestMints, { status: 200 });
   } catch (error) {
     console.error("Error fetching mints", error);
-    return NextResponse.json(
-      { error: "Error fetching mints" },
-      { status: 500 }
-    );
+    return NextResponse.json([], { status: 500 });
   }
 }
