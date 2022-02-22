@@ -51,9 +51,6 @@ export async function GET() {
     return NextResponse.json(latestMints, { status: 200 });
   } catch (error) {
     console.error("Error fetching mints", error);
-    return NextResponse.json(
-      { error: "Error fetching mints" },
-      { status: 500 }
-    );
+    return NextResponse.json([], { status: 500 });
   }
 }
