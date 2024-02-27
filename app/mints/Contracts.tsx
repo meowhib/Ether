@@ -2,6 +2,7 @@
 
 import { DataTable } from "@/app/mints/data-table";
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
 import { MintEvent, columns } from "./columns";
 
 export default function Contracts() {
@@ -41,6 +42,14 @@ export default function Contracts() {
       </div>
     );
   }
+=======
+import { columns } from "./columns";
+import { MintEvent } from "./columns";
+
+export default function Contracts(latestMints: MintEvent[]) {
+  const [latestMintsList, setLatestMintsList] =
+    useState<MintEvent[]>(latestMints);
+>>>>>>> 886605aa4206c07b5a876da1c71dd248e5e12085
 
   if (!latestMints.length) {
     return (
